@@ -1,0 +1,36 @@
+server:
+  port: 80
+  error:
+    include-message: always
+#spring:
+#  datasource:
+#    url: jdbc:postgresql://localhost:5432/instagram
+#    password: '3812'
+#    username: 'postgres'
+spring:
+  datasource:
+    url: postgres://agkrpqggngxtze:6d92615f2ac7376b93d49b1659cbf7f99fcfdec6859ac3d41ac74fd5eec12ae0@ec2-99-80-170-190.eu-west-1.compute.amazonaws.com:5432/d8mv1nob8pupef
+    password: 6d92615f2ac7376b93d49b1659cbf7f99fcfdec6859ac3d41ac74fd5eec12ae0
+    username: agkrpqggngxtze
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+  servlet:
+    multipart:
+      max-file-size: 20MB
+      max-request-size: 20MB
+  sql:
+    init:
+      mode: always
+  security:
+    user:
+      name: user
+jwt:
+  secretKey: 'instagram-clone'
+  expireTime: '36000000'
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
+
